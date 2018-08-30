@@ -10,4 +10,4 @@ Verder zou ik willen voorstellen om bij versie beheer het volgende aan te houden
 
 2.x = werkende versie (losse werkende functies)
 
-3.x = eindproduct (samenknoping van de losse functies)
+3.x = eindproduct (samenknoping van de losse hoofdfuncties)
