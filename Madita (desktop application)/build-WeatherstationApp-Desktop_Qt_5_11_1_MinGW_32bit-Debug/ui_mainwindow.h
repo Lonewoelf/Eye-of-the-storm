@@ -14,8 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,88 +24,103 @@ class Ui_MainWindow
 public:
     QAction *actionTrend;
     QWidget *centralWidget;
-    QTabWidget *tabWidget;
-    QWidget *Current_tab;
-    QTextBrowser *textBrowser;
-    QTextBrowser *textBrowser_2;
-    QTextBrowser *textBrowser_3;
+    QPlainTextEdit *windDirection;
+    QPlainTextEdit *humidity;
+    QLabel *currentLabel;
+    QPlainTextEdit *windSpeed;
+    QPlainTextEdit *temperature;
     QLabel *label;
-    QWidget *Trend_tab;
-    QWidget *Graph;
-    QWidget *Table;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLabel *label_4;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
+        MainWindow->resize(650, 407);
+        MainWindow->setIconSize(QSize(100, 100));
         actionTrend = new QAction(MainWindow);
         actionTrend->setObjectName(QStringLiteral("actionTrend"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 651, 411));
-        QPalette palette;
-        QBrush brush(QColor(255, 255, 255, 255));
-        brush.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Base, brush);
-        palette.setBrush(QPalette::Active, QPalette::Window, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Window, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::Base, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::Window, brush);
-        tabWidget->setPalette(palette);
-        Current_tab = new QWidget();
-        Current_tab->setObjectName(QStringLiteral("Current_tab"));
-        textBrowser = new QTextBrowser(Current_tab);
-        textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        textBrowser->setGeometry(QRect(20, 150, 161, 91));
-        textBrowser_2 = new QTextBrowser(Current_tab);
-        textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
-        textBrowser_2->setGeometry(QRect(240, 150, 161, 91));
-        textBrowser_3 = new QTextBrowser(Current_tab);
-        textBrowser_3->setObjectName(QStringLiteral("textBrowser_3"));
-        textBrowser_3->setGeometry(QRect(460, 150, 161, 91));
-        label = new QLabel(Current_tab);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(280, 90, 71, 31));
-        QPalette palette1;
-        QBrush brush1(QColor(249, 249, 249, 255));
-        brush1.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Active, QPalette::Text, brush1);
-        palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
-        QBrush brush2(QColor(254, 254, 254, 255));
-        brush2.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Active, QPalette::ToolTipText, brush2);
-        palette1.setBrush(QPalette::Inactive, QPalette::Text, brush1);
-        palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
-        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush2);
-        QBrush brush3(QColor(120, 120, 120, 255));
-        brush3.setStyle(Qt::SolidPattern);
-        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush3);
-        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush3);
-        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush2);
-        label->setPalette(palette1);
+        windDirection = new QPlainTextEdit(centralWidget);
+        windDirection->setObjectName(QStringLiteral("windDirection"));
+        windDirection->setGeometry(QRect(360, 130, 131, 91));
         QFont font;
-        font.setFamily(QStringLiteral("SimSun"));
-        font.setPointSize(14);
-        label->setFont(font);
-        tabWidget->addTab(Current_tab, QString());
-        Trend_tab = new QWidget();
-        Trend_tab->setObjectName(QStringLiteral("Trend_tab"));
-        Graph = new QWidget(Trend_tab);
-        Graph->setObjectName(QStringLiteral("Graph"));
-        Graph->setGeometry(QRect(30, 100, 241, 171));
-        Table = new QWidget(Trend_tab);
-        Table->setObjectName(QStringLiteral("Table"));
-        Table->setGeometry(QRect(370, 100, 241, 171));
-        tabWidget->addTab(Trend_tab, QString());
+        font.setFamily(QStringLiteral("Source Code Pro"));
+        font.setPointSize(26);
+        font.setBold(false);
+        font.setWeight(50);
+        windDirection->setFont(font);
+        windDirection->setInputMethodHints(Qt::ImhNone);
+        windDirection->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        windDirection->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        windDirection->setReadOnly(true);
+        humidity = new QPlainTextEdit(centralWidget);
+        humidity->setObjectName(QStringLiteral("humidity"));
+        humidity->setGeometry(QRect(150, 270, 131, 91));
+        humidity->setFont(font);
+        humidity->setInputMethodHints(Qt::ImhNone);
+        humidity->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        humidity->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        humidity->setReadOnly(true);
+        currentLabel = new QLabel(centralWidget);
+        currentLabel->setObjectName(QStringLiteral("currentLabel"));
+        currentLabel->setGeometry(QRect(290, 30, 81, 31));
+        QPalette palette;
+        QBrush brush(QColor(249, 249, 249, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        QBrush brush1(QColor(254, 254, 254, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush1);
+        QBrush brush2(QColor(120, 120, 120, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush1);
+        currentLabel->setPalette(palette);
+        QFont font1;
+        font1.setFamily(QStringLiteral("SimSun"));
+        font1.setPointSize(14);
+        currentLabel->setFont(font1);
+        windSpeed = new QPlainTextEdit(centralWidget);
+        windSpeed->setObjectName(QStringLiteral("windSpeed"));
+        windSpeed->setGeometry(QRect(360, 270, 131, 91));
+        windSpeed->setFont(font);
+        windSpeed->setInputMethodHints(Qt::ImhNone);
+        windSpeed->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        windSpeed->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        windSpeed->setReadOnly(true);
+        temperature = new QPlainTextEdit(centralWidget);
+        temperature->setObjectName(QStringLiteral("temperature"));
+        temperature->setGeometry(QRect(150, 130, 131, 91));
+        temperature->setFont(font);
+        temperature->setInputMethodHints(Qt::ImhNone);
+        temperature->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        temperature->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        temperature->setReadOnly(true);
+        temperature->setCenterOnScroll(false);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(190, 240, 47, 13));
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(180, 100, 71, 16));
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(390, 100, 71, 16));
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(390, 240, 71, 16));
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
-
-        tabWidget->setCurrentIndex(0);
-
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -115,9 +129,15 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Weather stationC", nullptr));
         actionTrend->setText(QApplication::translate("MainWindow", "Trend", nullptr));
-        label->setText(QApplication::translate("MainWindow", "Current", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(Current_tab), QApplication::translate("MainWindow", "Current", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(Trend_tab), QApplication::translate("MainWindow", "Trend", nullptr));
+        windDirection->setPlainText(QString());
+        humidity->setPlainText(QString());
+        currentLabel->setText(QApplication::translate("MainWindow", "Current", nullptr));
+        windSpeed->setPlainText(QString());
+        temperature->setPlainText(QString());
+        label->setText(QApplication::translate("MainWindow", "Humidity", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Temperature", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Wind direction", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "Wind speed", nullptr));
     } // retranslateUi
 
 };
