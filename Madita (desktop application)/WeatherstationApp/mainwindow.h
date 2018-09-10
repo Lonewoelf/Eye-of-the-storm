@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <iostream>
+#include "trendwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,8 +17,9 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
     //test
-    int testTemp[9] ={20, 30, 15, -4, 3, 2, 45, 100, 23} ;
+    int testTemp[9] ={20, 30, 15, -4, 3, 2, 45, 100, 23};
     int testHumi[9] ={1, 2, 3, 4, 5, 6, 7, 8, 9};
     char testWind[9] ={'W', 'S', 'N', 'E', 'S', 'W', 'N', 'S', 'E'};
     int testSpeed[9] ={3, 4, 3, 4, 5, 7, 8, 1, 2};
@@ -26,10 +28,16 @@ public:
 public slots:
     void updateValues();
 
+private slots:
+    void on_trendButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer_1m;
     int value = 0;
+
+    trendWindow *trendwindow;
 };
+
 
 #endif // MAINWINDOW_H
