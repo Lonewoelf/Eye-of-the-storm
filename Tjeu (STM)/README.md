@@ -1,1 +1,0 @@
-Alle commits moeten met versie nummer bijgehouden worden, en iedereen werkt vanuit zijn eigen mapje
