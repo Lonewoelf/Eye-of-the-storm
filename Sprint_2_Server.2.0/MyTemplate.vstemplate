@@ -1,0 +1,27 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Sprint_2_Server</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Sprint_2_Server</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="MySQL_Server_App.vcxproj" File="MySQL_Server_App.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">MySQL_Server_App.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="main.cpp">main.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="database.cpp">database.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="tcpipserver.cpp">tcpipserver.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="database.h">database.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sensorValues.h">sensorValues.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="tcpipserver.h">tcpipserver.h</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
