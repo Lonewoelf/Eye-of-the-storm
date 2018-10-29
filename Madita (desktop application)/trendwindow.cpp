@@ -3,17 +3,20 @@
 #include <QtSql/qsqldatabase.h>
 #include <QtSql/qtsqlglobal.h>
 #include <QtSql>
-#include <QDebug>
-
 
 trendWindow::trendWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::trendWindow)
 {
     ui->setupUi(this);
-    ui->enterNum -> setInputMask("999");   //Set input mask to a max of 999, digits only
-    ui->enterNum->setText("10");           //Set default input value to 10
-    //ui->enterNum->setValidator(( new QIntValidator(1, 365, this)));
+    ui->enterNum -> setInputMask("9999");   //Set input mask to a max of 9999, digits only
+    ui->enterNum->setText("60");           //Set default input value to 10
+
+    QPixmap bkgnd(":/Images/images/trendBG.png");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
 }
 
 trendWindow::~trendWindow()

@@ -2,9 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDialog>
 #include <iostream>
 #include "trendwindow.h"
 #include "mysql.h"
+#include "compass.h"
+#include "errorwindow.h"
+
 #include <QtSql/qsqldatabase.h>
 #include <QtSql/qtsqlglobal.h>
 #include <QtSql>
@@ -20,6 +24,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void setBackgroundImage(QString weather);
+    void setUpCompass();
+    void updateCompass(QString direction);
+
 
 public slots:
     void updateValues();
@@ -29,9 +37,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QTimer *timer_1m;
+    QTimer *timer_1s;
     MySQL Test1;
+    Compass comp;
     trendWindow *trendwindow;
+    errorwindow *errorwindow;
+    int init;
 };
 
 

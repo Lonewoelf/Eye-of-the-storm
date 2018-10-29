@@ -360,7 +360,7 @@
      <rect>
       <x>120</x>
       <y>0</y>
-      <width>71</width>
+      <width>81</width>
       <height>21</height>
      </rect>
     </property>
@@ -372,17 +372,17 @@
     </property>
     <item>
      <property name="text">
+      <string>Minutes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hours</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Days</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Months</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Years</string>
      </property>
     </item>
    </widget>
@@ -411,9 +411,9 @@
    <widget class="QComboBox" name="location">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>200</x>
       <y>0</y>
-      <width>101</width>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>

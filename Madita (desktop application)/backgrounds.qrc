@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>images/cold.jpg</file>
+        <file>images/rainy.jpg</file>
+        <file>images/reloadPic.ico</file>
+        <file>images/sunny.jpg</file>
+        <file>images/kompas.png</file>
+        <file>images/arrow.png</file>
+        <file>images/trendBG.png</file>
+    </qresource>
+</RCC>
